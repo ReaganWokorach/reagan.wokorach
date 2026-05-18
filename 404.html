@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Reagan Wokorach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0D1B2A;
+      --teal: #0077B6;
+      --teal-light: #00B4D8;
+      --green: #00F5A0;
+      --grey: #8899AA;
+      --off-white: #F0F8FF;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--off-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background-image:
+        linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .code {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(5rem, 18vw, 10rem);
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      text-shadow: 0 0 60px rgba(0,119,182,0.3);
+      margin-bottom: 1rem;
+      letter-spacing: -0.04em;
+    }
+    .code span { color: var(--green); }
+    h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    p {
+      color: var(--grey);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 420px;
+      margin: 0 auto 2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid var(--teal);
+    }
+    .btn:hover {
+      background: var(--teal-light);
+      border-color: var(--teal-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,119,182,0.35);
+    }
+    .logo {
+      position: fixed;
+      top: 1.5rem; left: 2rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      color: var(--green);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <a class="logo" href="/">Wokoz.R</a>
+  <div class="code">4<span>0</span>4</div>
+  <h1>Page Not Found</h1>
+  <p>Looks like this page doesn't exist — or it moved. Even in cybersecurity,
+  not every path leads where you expect. Let's get you back to safety.</p>
+  <a href="/" class="btn">← Back to Portfolio</a>
+</body>
+</html>
