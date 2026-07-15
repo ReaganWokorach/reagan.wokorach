@@ -1,5 +1,35 @@
 // Reagan Wokorach — Portfolio site behavior
 
+// ── Interactive hero image — subtle 3D tilt + spotlight, follows cursor ──
+// A restrained, professional micro-interaction: the photo tilts slightly
+// toward the cursor and a soft highlight tracks its position. Disabled on
+// touch devices (no meaningful cursor position) and respects users who
+// have asked for reduced motion.
+const imageFrame = document.querySelector('.image-frame');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
+if (imageFrame && !prefersReducedMotion && !isTouchDevice) {
+  const maxTilt = 8; // degrees — kept subtle, not gimmicky
+
+  imageFrame.addEventListener('mousemove', (e) => {
+    const rect = imageFrame.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;   // 0 → 1
+    const y = (e.clientY - rect.top) / rect.height;    // 0 → 1
+
+    const rotateY = (x - 0.5) * maxTilt * 2;
+    const rotateX = (0.5 - y) * maxTilt * 2;
+
+    imageFrame.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    imageFrame.style.setProperty('--spot-x', `${x * 100}%`);
+    imageFrame.style.setProperty('--spot-y', `${y * 100}%`);
+  });
+
+  imageFrame.addEventListener('mouseleave', () => {
+    imageFrame.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+  });
+}
+
 // ── Navbar scroll effect ──────────────────────────────────────────────
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
